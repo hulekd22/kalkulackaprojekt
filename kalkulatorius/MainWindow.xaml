@@ -1,0 +1,52 @@
+﻿<Window x:Name="calculatore" x:Class="kalkulatorius.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kalkulatorius"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="600" Background="#FFFF9696">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="1" Grid.Column="0" Content="%" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="procentaklik"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="√" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="odmocninaklik"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="x^2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="nadruhouklik"/>
+        <Button Grid.Row="1" Grid.Column="3" Content="1/x" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="lomenoxklik"/>
+        <Button Grid.Row="2" Grid.Column="0" Content="CE" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="ceklik"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="C" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="cklik"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="-=" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="smazatklik"/>
+        <Button Grid.Row="2" Grid.Column="3" Content="/" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="delenoklik"/>
+        <Button Grid.Row="3" Grid.Column="0" Content="7" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="sedmklik"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="8" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="osmklik"/>
+        <Button Grid.Row="3" Grid.Column="2" Content="9" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="devetklik"/>
+        <Button Grid.Row="3" Grid.Column="3" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="kratklik"/>
+        <Button Grid.Row="4" Grid.Column="0" Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="ctyriklik"/>
+        <Button Grid.Row="4" Grid.Column="1" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="petklik"/>
+        <Button Grid.Row="4" Grid.Column="2" Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="sestklik"/>
+        <Button Grid.Row="4" Grid.Column="3" Content="-" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="minusklik"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="jednaklik"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="dvaklik"/>
+        <Button Grid.Row="5" Grid.Column="2" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="triklik"/>
+        <Button Grid.Row="5" Grid.Column="3" Content="+" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="plusklik"/>
+        <Button Grid.Row="6" Grid.Column="0" Content="+-" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="plusminusklik"/>
+        <Button Grid.Row="6" Grid.Column="1" Content="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="nulaklik"/>
+        <Button Grid.Row="6" Grid.Column="2" Content="," HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="carkaklik"/>
+        <Button Grid.Row="6" Grid.Column="3" Content="=" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="100" FontSize="24" FontFamily="Arial Black" Click="rovnaseklik"/>
+        <Label Name="printerk" Content="" Grid.Row="0" Grid.ColumnSpan="4"  FontSize="65"/>
+
+    </Grid>
+</Window>
