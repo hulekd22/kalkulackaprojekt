@@ -28,6 +28,11 @@ namespace kalkulatorius
         public string ciselnikStr = "";
         public double ciselnikOld = 0;
         public string ciselnikOldStr = "";
+        public double ciselnikSave = 0;
+        public string ciselnikSaveStr = "";
+        public string znamenko = "";
+        public bool pocitam = false;
+        public bool desetinna = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -239,7 +244,25 @@ namespace kalkulatorius
 
         private void nadruhouklik(object sender, RoutedEventArgs e)
         {
-
+            if (pocitam == false)
+            {
+                ciselnik = ciselnikOld * ciselnikOld;
+                ciselnikStr = Convert.ToString(ciselnik);
+                ciselnikOld = ciselnik;
+                ciselnikOldStr = ciselnikStr;
+                printerk.Content = ciselnikOld;
+            }
+            else
+            {
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = ciselnikOld * ciselnikOld;
+                ciselnikStr = Convert.ToString(ciselnik);
+                ciselnikOld = ciselnik;
+                ciselnikOldStr = ciselnikStr;
+                rovnaseklik(sender, e);
+                printerk.Content = ciselnikOld;
+            }
         }
 
         private void lomenoxklik(object sender, RoutedEventArgs e)
@@ -248,7 +271,13 @@ namespace kalkulatorius
         }
         private void ceklik(object sender, RoutedEventArgs e)
         {
-
+            ciselnikSave = ciselnikOld;
+            ciselnikSaveStr = Convert.ToString(ciselnikSave);
+            ciselnik = 0;
+            ciselnikStr = "";
+            ciselnikOld = 0;
+            ciselnikOldStr = "";
+            printerk.Content = "";
         }
 
         private void cklik(object sender, RoutedEventArgs e)
@@ -272,22 +301,126 @@ namespace kalkulatorius
 
         private void delenoklik(object sender, RoutedEventArgs e)
         {
-
+            if (pocitam == false)
+            {
+                znamenko = "/";
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = 0;
+                ciselnikStr = "";
+                ciselnikOld = 0;
+                ciselnikOldStr = "";
+                printerk.Content = "";
+                pocitam = true;
+                desetinna = false;
+            }
+            else
+            {
+                rovnaseklik(sender, e);
+                znamenko = "/";
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = 0;
+                ciselnikStr = "";
+                ciselnikOld = 0;
+                ciselnikOldStr = "";
+                printerk.Content = "";
+                pocitam = true;
+                desetinna = false;
+            }
         }
 
         private void kratklik(object sender, RoutedEventArgs e)
         {
-
+            if (pocitam == false)
+            {
+                znamenko = "*";
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = 0;
+                ciselnikStr = "";
+                ciselnikOld = 0;
+                ciselnikOldStr = "";
+                printerk.Content = "";
+                pocitam = true;
+                desetinna = false;
+            }
+            else
+            {
+                rovnaseklik(sender, e);
+                znamenko = "*";
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = 0;
+                ciselnikStr = "";
+                ciselnikOld = 0;
+                ciselnikOldStr = "";
+                printerk.Content = "";
+                pocitam = true;
+                desetinna = false;
+            }
         }
 
         private void minusklik(object sender, RoutedEventArgs e)
         {
-
+            if (pocitam == false)
+            {
+                znamenko = "-";
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = 0;
+                ciselnikStr = "";
+                ciselnikOld = 0;
+                ciselnikOldStr = "";
+                printerk.Content = "";
+                pocitam = true;
+                desetinna = false;
+            }
+            else
+            {
+                rovnaseklik(sender, e);
+                znamenko = "-";
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = 0;
+                ciselnikStr = "";
+                ciselnikOld = 0;
+                ciselnikOldStr = "";
+                printerk.Content = "";
+                pocitam = true;
+                desetinna = false;
+            }
         }
 
         private void plusklik(object sender, RoutedEventArgs e)
         {
-
+            if (pocitam == false)
+            {
+                znamenko = "+";
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = 0;
+                ciselnikStr = "";
+                ciselnikOld = 0;
+                ciselnikOldStr = "";
+                printerk.Content = "";
+                pocitam = true;
+                desetinna = false;
+            }
+            else
+            {
+                rovnaseklik(sender, e);
+                znamenko = "+";
+                ciselnikSave = ciselnikOld;
+                ciselnikSaveStr = Convert.ToString(ciselnikSave);
+                ciselnik = 0;
+                ciselnikStr = "";
+                ciselnikOld = 0;
+                ciselnikOldStr = "";
+                printerk.Content = "";
+                pocitam = true;
+                desetinna = false;
+            }
         }
 
         private void plusminusklik(object sender, RoutedEventArgs e)
@@ -297,12 +430,71 @@ namespace kalkulatorius
 
         private void carkaklik(object sender, RoutedEventArgs e)
         {
-
+            if ((ciselnikOldStr == "") && (desetinna == false))
+            {
+                ciselnikStr = "0,";
+                ciselnikOldStr = ciselnikStr;
+                printerk.Content = ciselnikOldStr;
+                desetinna = true;
+            }
+            else if ((desetinna == false) && (ciselnikOldStr != ""))
+            {
+                ciselnikStr = ciselnikOldStr + ",";
+                ciselnikOldStr = ciselnikStr;
+                printerk.Content = ciselnikOld;
+                desetinna = true;
+            }
         }
 
         private void rovnaseklik(object sender, RoutedEventArgs e)
         {
-
+            if ((znamenko != "") && (pocitam = true))
+            {
+                if (znamenko == "+")
+                {
+                    ciselnik = ciselnikSave + ciselnikOld;
+                    ciselnikStr = Convert.ToString(ciselnik);
+                    ciselnikOld = ciselnik;
+                    ciselnikOldStr = ciselnikStr;
+                    printerk.Content = ciselnikOldStr;
+                    ciselnikSave = 0;
+                    ciselnikSaveStr = "";
+                    pocitam = false;
+                }
+                if (znamenko == "-")
+                {
+                    ciselnik = ciselnikSave - ciselnikOld;
+                    ciselnikStr = Convert.ToString(ciselnik);
+                    ciselnikOld = ciselnik;
+                    ciselnikOldStr = ciselnikStr;
+                    printerk.Content = ciselnikOldStr;
+                    ciselnikSave = 0;
+                    ciselnikSaveStr = "";
+                    pocitam = false;
+                }
+                if (znamenko == "*")
+                {
+                    ciselnik = ciselnikSave * ciselnikOld;
+                    ciselnikStr = Convert.ToString(ciselnik);
+                    ciselnikOld = ciselnik;
+                    ciselnikOldStr = ciselnikStr;
+                    printerk.Content = ciselnikOldStr;
+                    ciselnikSave = 0;
+                    ciselnikSaveStr = "";
+                    pocitam = false;
+                }
+                if (znamenko == "/")
+                {
+                    ciselnik = ciselnikSave / ciselnikOld;
+                    ciselnikStr = Convert.ToString(ciselnik);
+                    ciselnikOld = ciselnik;
+                    ciselnikOldStr = ciselnikStr;
+                    printerk.Content = ciselnikOldStr;
+                    ciselnikSave = 0;
+                    ciselnikSaveStr = "";
+                    pocitam = false;
+                }
+            }
         }
     }
 }
